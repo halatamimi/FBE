@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Fill in your information</h1>
+    <form>
+        <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname"><br>
+  <label for="email" id="email">Email</label><br>
+  <input type="email" id="email" name="email"><br>
+
+  <br>
+  <h1>Your Gender</h1>
+  <input type="radio" id="male" name="g" value="male" required>
+  <label for="male">Male</label>
+  <input type="radio" id="female" name="g" value="female" required>
+  <label for="female">Female</label>
+  <h1>Favorite Subjects</h1>
+
+  <input type="checkbox" id="vehicle1" name="vehicle1" value="C++">
+  <label for="vehicle1"> C++</label>
+  <input type="checkbox" id="vehicle2" name="vehicle2" value="Java">
+  <label for="vehicle2"> Java</label>
+  <input type="checkbox" id="vehicle3" name="vehicle3" value="C#">
+  <label for="vehicle3"> C#</label>
+  <input type="checkbox" id="vehicle4" name="vehicle4" value="PHP">
+  <label for="vehicle4"> PHP</label>
+  <input type="checkbox" id="vehicle5" name="vehicle5" value="SQL">
+  <label for="vehicle5"> SQL</label>
+
+  <h1>Your City</h1>
+  <label for="country">City:</label>
+  <select id="country" name="country" required>
+    <option value="Amman">Amman</option>
+    <option value="irbid">Irbid</option>
+    <option value="Aqaba">Aqaba</option>
+  </select>
+<br><br>
+  <label for="image">Upload Image:</label>
+  <input type="file" id="image" name="image">
+  <br><br>
+  <label for="text">Write About yourself:</label><br><br>
+  <textarea id="text" name="text" rows="8" cols="50"></textarea><br>
+  <input type="submit" >
+    </form>
+<hr>
+    <form>
+        <br>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br>
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address"><br>
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city"><br>
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state"><br>
+        <label for="zip">Zip:</label>
+        <input type="text" id="zip" name="zip"><br>
+        <label for="magazine">Magazine:</label>
+        <select id="magazine" name="magazine" required>
+            <option value="Vogue">Vogue</option>
+            <option value="National Geographic">National Geographic</option>
+            <option value="InStyle">InStyle</option>
+          </select>
+          <br>
+
+          <label for="">Subscription:</label>
+          <input type="radio" id="1year" name="y" value="1year" required>
+          <label for="1year">1 year</label>
+          <input type="radio" id="2year" name="y" value="2year" required>
+          <label for="2year">2 year</label>
+
+          <br><br>
+
+          <input type="submit" value="Send Your Order">
+
+    </form>
+</body>
+</html>
