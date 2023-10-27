@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+
+    <style>
+        * {
+            margin: 0;
+        }
+        body {
+            
+            display: grid;
+            height: 100vh;
+            place-items: center;
+
+        }
+
+        .titel {
+            text-transform: uppercase;
+            background-color: brown;
+            height: 50vh;
+            display: grid;
+            place-content: center;
+        }
+ 
+
+        .menu {
+            height: 50vh;
+            background-color: palegoldenrod;
+
+        }
+
+        .menu ul {
+            text-align: center;
+            padding: 25px;
+        }
+
+        .menu ul li {
+            text-transform: uppercase;
+            list-style-type: none;
+            display: inline-block;
+            padding-left: 20px;
+            color: green;
+        }
+
+        .menu h2 {
+            text-transform: capitalize;
+            font-weight: bold;
+        }
+
+        h4,
+        h2 {
+            padding-bottom: 20px;
+        }
+
+        .brownTxt {
+            color: brown;
+        }
+
+        .cwr {
+            background-color: antiquewhite;
+        }
+
+        h1 {
+            text-transform: uppercase;
+
+        }
+
+        h1,
+        p,
+        label {
+            color: pink;
+        }
+
+
+
+        .btn {
+            color: white;
+            background-color: pink;
+            width: 35%;
+            height: 35px;
+            border-radius: 10px;
+            border: 1px solid rgb(144, 214, 245);
+        }
+
+        
+        input {
+            width: 95%;
+            border: 1px solid rgb(144, 214, 245);
+            border-radius: 10px;
+            height: 30px;
+        }
+
+        .inpcontainer {
+            padding: 15px;
+            text-align: left;
+        }
+
+        .inpcontainer * {
+            margin: 10px;
+        }
+
+        .cwr {
+            
+            background-color: white;
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+            border-radius: 30px;
+            height: 500px;
+            width: 25%;
+            text-align: center;
+        }
+
+
+      .concontainer  input,
+        textarea {
+            width: 75%;
+            margin: 5px;
+            border-radius: 10px;
+            border: 1px solid pink;
+            padding: 10px;
+        }
+
+      .concontainer  input {
+            height: 30px;
+        }
+
+        .concontainer {
+            color: white;
+            text-align: center;
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+
+            width: 80%;
+        }
+
+        .send {
+            background-color: rgb(28, 28, 127);
+            color: white;
+            font-size: larger;
+            border: 1px solid rgb(28, 28, 127);
+            border-radius: 10px;
+            width: 90px;
+            height: 40px;
+            margin-right: 70%;
+        }
+    </style>
+
+
+
+    <div class="home">
+
+         <div class="titel">
+            <h1>This is my banner text</h1>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Info</a></li>
+                <li><a href="#">Contat</a></li>
+                <li><a href="#">Hubpages</a></li>
+
+            </ul>
+            <h2>This Is My Paragraph Header</h2>
+            <br><br>
+            <h4 class="brownTxt">This is where I am going to put useful and informative text about my website.</h4>
+            <h4 class="brownTxt">This is where I am can pleace even more information about my website.</h4>
+            <h4>This is where I can place a copyright logo like this &copy;</h4>
+        </div>
+
+    </div>
+
+    <br><br><br>
+    
+    <div class="cwr">
+        <h1>CODEWITHRANDOM</h1>
+        <p>Thank you for being with me</p>
+
+        <form class="inpcontainer">
+        <label for="name">Name</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="email">Email</label><br>
+        <input type="email" id="email" name="email"><br>
+        <label for="pass">Password</label><br>
+        <input type="password" id="pass" name="pass"><br>
+        <label for="repeatpass">Repeat Password</label><br>
+        <input type="password" id="repeatpass" name="repeatpass"><br>
+        </form>
+        <br>
+        <button class="btn">Register</button>
+    </div>
+    <br><br><br>
+
+    <div class="concontainer">
+        <form>
+        <h1>Contact Us</h1>
+        <input type="text" placeholder="Full Name">
+        <br>
+        <input type="email" placeholder="Email">
+        <br>
+        <input type="tel" placeholder="tel: xxx xxx xxxx">
+        <br>
+        <textarea placeholder="Your Message Here" maxlength="100" rows="10"></textarea>
+        <br><br>
+
+
+        <button class="send">Send</button>
+    </form>
+    </div>
+</body>
+</html>

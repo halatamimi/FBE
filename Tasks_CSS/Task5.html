@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        body{
+            background-color: antiquewhite;
+        }
+
+        .paragraph {
+            display: inline-block;
+            width: 25%;
+            height: 85px;
+            background-color: lightgray;
+            overflow-y: hidden;
+        }
+
+        .d2 .paragraph p {
+            display: inline;
+            height: 50px;
+            border-top: 4px solid black;
+            border-bottom: 4px solid black;
+            overflow-y: scroll;
+            font-weight: bold;
+ 
+        }
+
+div {
+  width: 90%;
+  background-color: antiquewhite;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.d1,.d2,.d3{
+    display: inline;
+}
+
+.head
+{
+border:1px black;
+color: wheat;
+border: 1px solid;
+font-size: medium;
+  font-weight: 80;
+}
+
+.head pre,h2{
+    font-size: medium;
+  font-weight: 80;
+  color: black;
+}
+
+   .fixedimg  img {
+        margin-right: 15px;
+        margin-bottom: 100px;
+        position: fixed;
+        float: right;
+        right: 0;
+        top: 0;
+        z-index: 1000;
+        }
+
+       div .head .h h2{
+            color: red;
+        }
+        div .head .h pre{
+            border-style: dotted;
+        }
+
+        .if {
+            width: 100%;
+            height: 100%;
+        }
+  </style>
+
+
+
+    <h1>Floating Articles</h1>
+   
+
+        <div class="d1">
+            <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+        </div>
+        <div class="d2">
+            <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+        </div>
+        <div class="d1">
+            <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+        </div>
+
+    <iframe src="https://www.lipsum.com/" class="if">
+    </iframe>
+    <br><br>
+<div>
+    <div class="paragraph">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+    </div>
+
+    <div class="paragraph">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+    </div>
+</div>
+
+    <div>
+        <h1>CSS Articles - External CSS Sheet!</h1>
+
+        <div class="head">
+            <h2>Heading Num. 2</h2>
+            <pre>Lorem <mark> Ipsum </mark>is simply dummy text of the printing and typesetting industry.
+Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+
+        </div>
+
+        <div class="head">
+            <h2>Heading Num. 2</h2>
+            <pre>Lorem <mark> Ipsum </mark>is simply dummy text of the printing and typesetting industry.
+Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+
+        </div>
+
+        <div class="head">
+            <h2 class="h">Heading Num. 2</h2>
+            <pre>Lorem <mark> Ipsum </mark>is simply dummy text of the printing and typesetting industry.
+Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+
+        </div>
+
+    </div>
+
+    <div class="fixedimg">
+    <h1>Fixed Image</h1>
+    <img src="C:\Users\HP\Downloads\images (3).png">
+    <iframe src="https://www.lipsum.com/" class="if">
+    </iframe>
+    </div>
+</body>
+</html>
