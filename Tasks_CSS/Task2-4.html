@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+
+body{
+    background-color: #1abc9c;
+    padding: 0;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    height: 100vh;
+}
+    .container{
+    background-color: white;
+    display: flex;         
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: 500px;
+    margin: auto;
+    margin-top: 100px;
+    }
+    .contform{
+
+        width: 60%;
+    }
+
+    .login-btn{
+    display: block;
+    margin: 30px auto;
+    border-style: none;
+    background-color: #1abc9c;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    width: 100%;
+}
+p{
+    text-align: center;
+}
+
+h1{
+    color: #54a389;
+    text-align: center;
+    margin: 0;
+}
+
+.contform input:focus~label,
+.contform input:valid~label {
+    top: -5px;
+}
+
+form #user{
+    display: block;
+    border-style: none;
+    border-bottom: 1px solid black;
+    height: 20px;
+    width: 100%;
+    padding: 0 10px;
+    margin-bottom: 20px;
+}
+
+form #pass{
+    display: block;
+    border-style: none;
+    border-bottom: 1px solid black;
+    height: 20px;
+    width: 100%;
+    padding: 0 10px;
+    margin-bottom: 20px;
+}
+    </style>
+    <!-- اخر جزء -->
+
+    <div class="container">
+        <div class="contform">
+        <form>
+            <h1>User Login</h1>
+            <br>
+            <label for="user">Username</label><br>
+            <input type="text" id="user" name="user"><br>
+            <label for="pass">Password</label><br>
+            <input type="password" id="pass" name="pass"><br>
+            <button class="login-btn">Login</button>
+        </form>
+            <p>Forgot Password?</p>
+           </div>
+        </div>
+</body>
+</html>
