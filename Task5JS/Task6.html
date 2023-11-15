@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task6</title>
+    <style>
+        #Box {
+            width: 400px;
+            height: 400px;
+            background: burlywood;
+            border: 3px solid wheat;
+          
+        }
+    </style>
+</head>
+
+<body>
+    <div id="Box"></div>
+</body>
+<script>
+    function changeColor() {
+        var arr = ["pink", "lightblue", "antiquewhite", "burlywood", "darkolivegreen"];
+        document.getElementById("Box").style.background = arr[Math.floor(Math.random() * arr.length)];
+    }
+    setInterval(changeColor, 500);
+</script>
+
+</html>

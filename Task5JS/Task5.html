@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #content-box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+    <script>
+        function updateTextProperties() {
+            // Get the entered text
+            var enteredText = document.getElementById("textInput").value;
+
+            // Get the selected values from the controls
+            var fontSize = document.getElementById("fontSize").value;
+            var fontFamily = document.getElementById("fontFamily").value;
+            var textDecoration = document.getElementById("textDecoration").checked ? "underline" : "none";
+
+            // Set the style of the content box based on user input
+            var contentBox = document.getElementById("content-box");
+            contentBox.style.fontSize = fontSize + "px";
+            contentBox.style.fontFamily = fontFamily;
+            contentBox.style.textDecoration = textDecoration;
+
+            // Set the entered text to the content box
+            contentBox.innerText = enteredText;
+        }
+    </script>
+</head>
+<body>
+
+<!-- Text input for entering content -->
+<label for="textInput">Enter Text:</label>
+<input type="text" id="textInput" oninput="updateTextProperties()">
+<br>
+
+<!-- Controls for modifying text properties -->
+<label for="fontSize">Font Size:</label>
+<input type="number" id="fontSize" value="14" min="1" oninput="updateTextProperties()"> px
+<br>
+
+<label for="fontFamily">Font Family:</label>
+<select id="fontFamily" onchange="updateTextProperties()">
+    <option value="Arial">Arial</option>
+    <option value="Times New Roman">Times New Roman</option>
+    <!-- Add more font options as needed -->
+</select>
+<br>
+
+<label for="textDecoration">Underline:</label>
+<input type="checkbox" id="textDecoration" onchange="updateTextProperties()">
+<br>
+
+<!-- Content box to display entered text -->
+<div id="content-box"></div>
+
+</body>
+</html>

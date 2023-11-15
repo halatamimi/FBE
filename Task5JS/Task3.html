@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .error-message {
+            color: red;
+        }
+    </style>
+    <script>
+        function checkPassword() {
+            // Get the values of the password and re-entered password fields
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+
+            // Get the error message elements
+            var lengthError = document.getElementById("lengthError");
+            var matchError = document.getElementById("matchError");
+
+            // Reset error messages
+            lengthError.style.display = "none";
+            matchError.style.display = "none";
+
+            // Check the length of the password
+            if (password.length < 6) {
+                lengthError.style.display = "block";
+                return; // Stop further processing if the password is too short
+            }
+
+            // Check if the passwords match
+            if (password !== confirmPassword) {
+                matchError.style.display = "block";
+            }
+        }
+    </script>
+</head>
+<body>
+
+<!-- Password input and re-enter password input -->
+<label for="password">Password:</label>
+<input type="password" id="password" required>
+<br>
+<label for="confirmPassword">Re-enter Password:</label>
+<input type="password" id="confirmPassword" required>
+<br>
+
+<!-- Error messages -->
+<p id="lengthError" class="error-message" style="display: none">Password is too short (minimum 6 characters).</p>
+<p id="matchError" class="error-message" style="display: none">Passwords do not match.</p>
+
+<!-- Button to check the passwords -->
+<button onclick="checkPassword()">Check Passwords</button>
+
+</body>
+</html>
