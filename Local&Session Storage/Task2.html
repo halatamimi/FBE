@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        #projectForm {
+            max-width: 400px;
+            margin: 80px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #ccc;
+        }
+
+        #projectCards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 20px auto;
+        }
+
+        .projectCard {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px;
+            max-width: 300px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .projectCard p {
+            margin: 5px 0;
+        }
+    </style>
+    <script>
+        function storeAndRenderProject() {
+            // Get form values
+            var subject = document.getElementById("subject").value;
+            var description = document.getElementById("description").value;
+            var userTypes = document.getElementById("userTypes").value;
+            var technologyUsed = document.getElementById("technologyUsed").value;
+
+            // Create an object with the collected data
+            var projectData = {
+                subject: subject,
+                description: description,
+                userTypes: userTypes,
+                technologyUsed: technologyUsed
+            };
+
+            // Retrieve existing projects from session storage
+            var existingProjects = JSON.parse(sessionStorage.getItem('projects')) || [];
+
+            // Add the new project data to the existing projects
+            existingProjects.push(projectData);
+
+            // Store the updated projects in session storage
+            sessionStorage.setItem('projects', JSON.stringify(existingProjects));
+
+            // Render the projects on the webpage
+            renderProjects(existingProjects);
+        }
+
+        function renderProjects(projects) {
+            // Get the container for project cards
+            var projectCardsContainer = document.getElementById("projectCards");
+
+            // Clear previous content
+            projectCardsContainer.innerHTML = '';
+
+            // Loop through each project and render a card
+            projects.forEach(function (projectData) {
+                // Create a new card element
+                var card = document.createElement("div");
+                card.classList.add("projectCard");
+
+                // Populate the card with project data
+                var cardContent = `<p><strong>Subject:</strong> ${projectData.subject}</p>`;
+                cardContent += `<p><strong>Description:</strong> ${projectData.description}</p>`;
+                cardContent += `<p><strong>User Types:</strong> ${projectData.userTypes}</p>`;
+                cardContent += `<p><strong>Technology Used:</strong> ${projectData.technologyUsed}</p>`;
+
+                // Set the card content
+                card.innerHTML = cardContent;
+
+                // Append the card to the container
+                projectCardsContainer.appendChild(card);
+            });
+        }
+    </script>
+</head>
+<body>
+
+<!-- Form for collecting project information -->
+<form id="projectForm">
+    <label for="subject">Subject:</label>
+    <input type="text" id="subject" name="subject" required>
+
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" rows="4" required></textarea>
+
+    <label for="userTypes">User Types:</label>
+    <input type="text" id="userTypes" name="userTypes" required>
+
+    <label for="technologyUsed">Technology Used:</label>
+    <input type="text" id="technologyUsed" name="technologyUsed" required>
+
+    <!-- Submit button -->
+    <button type="button" onclick="storeAndRenderProject()">Submit</button>
+</form>
+
+<!-- Container for project cards -->
+<div id="projectCards"></div>
+
+</body>
+</html>

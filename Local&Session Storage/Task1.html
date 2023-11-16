@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #personalDataCards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .personalDataCard {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            max-width: 300px;
+        }
+
+        .personalDataCard p {
+            margin: 5px 0;
+        }
+
+        
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 20%;
+            margin-top:20px ;
+        }
+
+        button:hover {
+            background-color: #ccc;
+        }
+    </style>
+    <script>
+        function storeAndRenderData() {
+            // Get form values
+            var name = document.getElementById("name").value;
+            var age = document.getElementById("age").value;
+            var gender = document.getElementById("gender").value;
+            var description = document.getElementById("description").value;
+            var major = document.getElementById("major").value;
+            var University = document.getElementById("university").value;
+
+            // Get selected programming languages
+            var programmingLanguages = [];
+            var checkboxes = document.getElementsByName("programmingLanguages");
+            checkboxes.forEach(function (checkbox) {
+                if (checkbox.checked) {
+                    programmingLanguages.push(checkbox.value);
+                }
+            });
+
+            // Create an object with the collected data
+            var userData = {
+                name: name,
+                age: age,
+                gender: gender,
+                description: description,
+                major: major,
+                university:University,
+                programmingLanguages: programmingLanguages
+            };
+
+            // Store the data in local storage
+            localStorage.setItem('userData', JSON.stringify(userData));
+
+            // Render the data on the webpage
+            renderData(userData);
+        }
+
+        function renderData(userData) {
+            // Get the container for personal data cards
+            var personalDataCardsContainer = document.getElementById("personalDataCards");
+
+            // Create a new card element
+            var card = document.createElement("div");
+            card.classList.add("personalDataCard");
+
+            // Populate the card with user data
+            var cardContent = `<p><strong>Name:</strong> ${userData.name}</p>`;
+            cardContent += `<p><strong>Age:</strong> ${userData.age}</p>`;
+            cardContent += `<p><strong>Gender:</strong> ${userData.gender}</p>`;
+            cardContent += `<p><strong>Description:</strong> ${userData.description}</p>`;
+            cardContent += `<p><strong>Major:</strong> ${userData.major}</p>`;
+            cardContent += `<p><strong>University:</strong> ${userData.university}</p>`;
+            cardContent += `<p><strong>Programming Languages:</strong> ${userData.programmingLanguages.join(', ')}</p>`;
+
+            // Set the card content
+            card.innerHTML = cardContent;
+
+            // Append the card to the container
+            personalDataCardsContainer.appendChild(card);
+        }
+    </script>
+</head>
+<body>
+
+<!-- Form for collecting personal data -->
+<form id="personalDataForm">
+    <label for="name">Your Name:</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="age">Your Age:</label><br>
+    <input type="number" id="age" name="age" required><br><br>
+
+    <label for="gender">Gender:</label><br>
+    <select id="gender" name="gender" required>
+        <option value="female">Female</option>
+        <option value="male">Male</option>
+    </select>
+
+    <br><br>
+    <label for="description">Brief Description:</label><br>
+    <textarea id="description" name="description" rows="4" required></textarea><br><br>
+
+    <label for="major">Your Major :</label><br>
+    <input type="text" id="major" name="major" required><br><br>
+
+    <label for="university">Your Uuniversity :</label><br>
+    <input type="text" id="university" name="university" required><br><br>
+
+    <label>Programming Languages you prefer (minimum 3):</label><br>
+    <input type="checkbox" id="lang1" name="programmingLanguages" value="JavaScript">
+    <label for="lang1">JavaScript</label><br>
+
+    <input type="checkbox" id="lang2" name="programmingLanguages" value="Python">
+    <label for="lang2">Python</label><br>
+
+    <input type="checkbox" id="lang3" name="programmingLanguages" value="Java">
+    <label for="lang3">Java</label><br>
+
+    <!-- Submit button -->
+    <button type="button" onclick="storeAndRenderData()">Submit</button>
+</form>
+
+<!-- Container for personal data cards -->
+<div id="personalDataCards"></div>
+
+</body>
+</html>

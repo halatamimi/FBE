@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            max-width: 400px;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 40px;
+        }
+
+        .Form-container{
+            max-width: 400px;
+            background-color: white;
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 40px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+            border: 1px solid #333;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin-top:20px ;
+        }
+
+        button:hover {
+            background-color: #ccc;
+        }
+        h2{
+            text-align: center;
+            margin-bottom: 40px;
+        }
+    </style>
+    <script>
+        function registerUser() {
+            // Get form values
+            var firstName = document.getElementById("firstName").value;
+            var lastName = document.getElementById("lastName").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            // Create an object with the user data
+            var userData = {
+                firstName: firstName,
+                lastName: lastName,
+                email: email,
+                password: password
+            };
+
+            // Store the user data in local storage
+            localStorage.setItem('userData', JSON.stringify(userData));
+
+            // Alert the user that registration is successful (for demo purposes)
+            alert("Registration successful!");
+        }
+
+        function loginUser() {
+            // Get form values
+            var email = document.getElementById("loginEmail").value;
+            var password = document.getElementById("loginPassword").value;
+
+            // Retrieve user data from local storage
+            var storedUserData = localStorage.getItem('userData');
+
+            // Check if user data exists
+            if (storedUserData) {
+                var userData = JSON.parse(storedUserData);
+
+                // Check if entered email and password match stored data
+                if (email === userData.email && password === userData.password) {
+                    // Alert the user that login is successful (for demo purposes)
+                    alert("Login successful!");
+                } else {
+                    // Alert the user that login failed (for demo purposes)
+                    alert("Login failed. Please check your email and password.");
+                }
+            } else {
+                // Alert the user that no user data is found (for demo purposes)
+                alert("No user data found. Please register first.");
+            }
+        }
+    </script>
+</head>
+<body>
+
+<!-- Registration form -->
+<div class="form-container">
+    <h2 class="registerForm">Registration Form</h2>
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" required>
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <!-- Register button -->
+    <button type="button" onclick="registerUser()">Register</button>
+</div>
+
+<!-- Login form -->
+<div class="Form-container">
+    <h2 class="loginForm">Login Form</h2>
+    <label for="loginEmail">Email:</label>
+    <input type="email" id="loginEmail" name="loginEmail" required>
+
+    <label for="loginPassword">Password:</label>
+    <input type="password" id="loginPassword" name="loginPassword" required>
+
+    <!-- Login button -->
+    <button type="button" onclick="loginUser()">Login</button>
+</div>
+
+</body>
+</html>
