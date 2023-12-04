@@ -1,0 +1,141 @@
+<!-- Exercise 1 -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+</head>
+<body>
+    <form action="process_form.php" method="post">
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required><br>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html> -->
+
+
+<!-- Exercise 2 -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Search Engine</title>
+</head>
+<body>
+    <h1>Search Engine</h1>
+    <form action="redirect.php" method="post">
+        <label for="urlInput">Enter URL:</label>
+        <input type="text" id="urlInput" name="urlInput" required>
+        <button type="submit">GO</button>
+    </form>
+</body>
+</html> -->
+
+
+<!-- Exercise 3 -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <form action="calculate.php" method="post">
+        <label for="num1">Number 1:</label>
+        <input type="number" id="num1" name="num1" required><br>
+
+        <label for="operator">Operator:</label>
+        <select id="operator" name="operator" required>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select><br>
+
+        <label for="num2">Number 2:</label>
+        <input type="number" id="num2" name="num2" required><br>
+
+        <button type="submit">Calculate</button>
+    </form>
+
+    <p>Result: <?php echo isset($_GET['result']) ? $_GET['result'] : ''; ?></p>
+</body>
+</html> -->
+
+
+<!-- Exercise 4 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #taskList {
+            margin-top: 20px;
+        }
+
+        #addTaskForm {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>To-Do List</h1>
+
+    <div id="taskList">
+        <!-- Tasks will be displayed here -->
+    </div>
+
+    <div id="addTaskForm">
+        <h2>Add a Task</h2>
+        <form id="taskForm">
+            <label for="task">Task:</label>
+            <input type="text" id="task" name="task" required>
+            <button type="button" onclick="addTask()">Add Task</button>
+        </form>
+    </div>
+
+    <script>
+        // Function to add a task to the list
+        function addTask() {
+            var taskInput = document.getElementById("task");
+            var task = taskInput.value.trim();
+
+            if (task !== "") {
+                // Create a new task element
+                var taskElement = document.createElement("div");
+                taskElement.textContent = task;
+
+                // Append the task to the task list
+                document.getElementById("taskList").appendChild(taskElement);
+
+                // Clear the input field
+                taskInput.value = "";
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
